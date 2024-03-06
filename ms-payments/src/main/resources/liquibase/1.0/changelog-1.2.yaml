@@ -1,0 +1,27 @@
+databaseChangeLog:
+  - changeSet:
+      id: creating "shedlock" table
+      author: Rasul Taghisoy
+      changes:
+        - createTable:
+            tableName: shedlock #it is specific name
+            columns:
+              - column:
+                  name: name
+                  type: varchar(64)
+                  constraints:
+                    primaryKey: true
+                    primaryKeyName: shedlock_pk
+                    nullable: false
+              - column:
+                  name: lock_until
+                  type: timestamp
+              - column:
+                  name: locked_at
+                  type: timestamp
+              - column:
+                  name: locked_by
+                  type: varchar(256)
+                  constraints:
+                    nullable: false
+

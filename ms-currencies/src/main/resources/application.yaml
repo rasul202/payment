@@ -1,0 +1,12 @@
+server:
+  port: 7070
+
+urls:
+  ms-users: http://localhost:8080/users
+  ms-notifications: http://localhost:8585/notifications
+  cbar.az: https://www.cbar.az/currencies
+
+cron:
+  makePaymentAndSendNotification-cron: 0 23 19 * * ?
+
+

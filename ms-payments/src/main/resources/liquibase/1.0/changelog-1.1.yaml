@@ -1,0 +1,49 @@
+databaseChangeLog:
+  - changeSet:
+      id: creating "payments" table
+      author: Rasul Taghisoy
+      changes:
+        - createTable:
+            tableName: payments
+            columns:
+              - column:
+                  name: id
+                  type: bigint
+                  autoIncrement: true
+                  constraints:
+                    primaryKey: true
+                    nullable: false
+              - column:
+                  name: debtor_user_id
+                  type: bigint
+              - column:
+                  name: creditor_user_id
+                  type: bigint
+              - column:
+                  name: debtor_user_amount
+                  type: number(16,2)
+              - column:
+                  name: creditor_user_amount
+                  type: number(16,2)
+              - column:
+                  name: debtor_user_currency
+                  type: varchar(5)
+              - column:
+                  name: creditor_user_currency
+                  type: varchar(5)
+              - column:
+                  name: status
+                  type: int
+              - column:
+                  name: created_at
+                  type: timestamp
+                  defaultValue: now()
+                  constraints:
+                    nullable: false
+
+
+
+          remarks: table that store the information of users #keeps information about table
+          schemaName: public
+
+
